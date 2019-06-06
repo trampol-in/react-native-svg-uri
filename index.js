@@ -127,6 +127,8 @@ class SvgUri extends Component{
 
   async fetchSVGData(uri) {
     let responseXML = null, error = null;
+    if(uri == null)
+        return null;
     try {
       const response = await fetch(uri);
       responseXML = await response.text();
